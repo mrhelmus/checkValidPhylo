@@ -31,7 +31,7 @@ checkValidPhylo <- function(phy)
             cat("  FATAL: 'Nnode' is not numeric\n")
         } else {
             if (storage.mode(phy$Nnode) != "integer")
-                cat("  MODERATE: 'Nnode' is not stored as an integer")
+                cat("  MODERATE: 'Nnode' is not stored as an integer\n")
         }
         if (length(phy$Nnode) == 1 && is.numeric(phy$Nnode)) {
             m <- phy$Nnode
@@ -55,7 +55,7 @@ checkValidPhylo <- function(phy)
                 cat("  FATAL: 'edge' is not a numeric matrix\n")
             } else {
                 if (storage.mode(phy$edge) != "integer")
-                    cat("  MODERATE: the matrix 'edge' is not stored as integers")
+                    cat("  MODERATE: the matrix 'edge' is not stored as integers\n")
                 if (nc == 2) {
                     if (any(phy$edge <= 0))
                         cat("  FATAL: some elements in 'edge' are negative or zero\n")
